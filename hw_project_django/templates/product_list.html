@@ -1,0 +1,10 @@
+{% for product in products %}
+    <div class="product-card">
+        <img src="{{ product.image.url }}" alt="{{ product.title }}">
+        <h3>{{ product.title }}</h3>
+        <p>{{ product.description }}</p>
+        <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">Подробнее</a>
+    </div>
+{% empty %}
+    <p>Нет доступных продуктов.</p>
+{% endfor %}
